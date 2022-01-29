@@ -9,7 +9,7 @@ function Characters() {
     <div>
       Characters component
       <div>
-        {!state.length && "CARGANDO"}
+        {!state.length && "No characters to show"}
         {state.map((char) => (
           <Character key={char.id} char={char} />
         ))}

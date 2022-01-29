@@ -11,36 +11,9 @@ import { useEffect } from "react";
 function App() {
   const dispatch = useDispatch();
 
-  // funcion para generar IDs aleatorias // ---------------------------------------
-
-  var AmountOfCharsToShow = 3;
-  var TotalChars = 826;
-  const getRandomId = () => {
-    return Math.floor(Math.random() * TotalChars) + 1;
-  };
-
-  var IDs = [];
-
-  const randomIDs = () => {
-    if (IDs.length < AmountOfCharsToShow) {
-      let newID = getRandomId();
-      if (IDs.includes(newID)) {
-        randomIDs();
-      } else {
-        IDs.push(newID);
-      }
-      randomIDs();
-    }
-  };
-
-  // llamo a la funcion que me genera 6 IDs aleatorias.
-  randomIDs();
-
-  // --------------------------------------- // ---------------------------------------
-
   // hago el dispatch que trae los 6 personajes random cuando se monta el componente App
   useEffect(() => {
-    dispatch(getCharacters(IDs));
+    dispatch(getCharacters());
   });
 
   return (

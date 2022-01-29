@@ -12,8 +12,10 @@ function SearchBar() {
     if (input) {
       let parse = input.split(",");
       parse = parse.map((n) => +n);
-      dispatch(getCharacters(parse));
+
+      if (parse) dispatch(getCharacters(parse));
     }
+    setInput("");
   }
 
   return (
