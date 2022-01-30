@@ -1,0 +1,87 @@
+.Character {
+  background-color: #67c8b8a6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 370px;
+  border-radius: 50px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 30px;
+  padding-left: 20px;
+  height: 100px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  border: 2px solid #ebfdff;
+}
+
+.Character button {
+  color: #ff39398f;
+  border-radius: 50px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  font-weight: bold;
+  background-color: #a1e7dba6;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.Character button:hover {
+  background-color: #ff39398f;
+  color: #464646;
+}
+
+.Character .container {
+  width: 100%;
+}
+
+.Character .container a {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  text-decoration: none;
+}
+
+.Character .container a p {
+  color: #24325FFF;
+}
+
+.Character .container a p span {
+  font-weight: bold;
+}
+
+.Character .container a h4 {
+  color: #102468;
+}
+
+.Character .container a img {
+  width: 100px;
+  border-radius: 50px;
+  border: 6px solid #ebfdff;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  margin-right: -2px;
+}
+
+.Character:hover {
+  background-color: #67c8b8d0;
+  -webkit-box-shadow: inset 0 -15px 10px -15px #00000078;
+          box-shadow: inset 0 -15px 10px -15px #00000078;
+  -webkit-transform: scale(105%);
+          transform: scale(105%);
+}
+
+.Character:hover img {
+  -webkit-transform: scale(115%);
+          transform: scale(115%);
+}
+/*# sourceMappingURL=Character.module.css.map */

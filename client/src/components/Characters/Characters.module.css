@@ -1,0 +1,17 @@
+.Characters {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.Characters .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  gap: 30px;
+}
+/*# sourceMappingURL=Characters.module.css.map */

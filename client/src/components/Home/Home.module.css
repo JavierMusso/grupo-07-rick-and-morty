@@ -1,0 +1,53 @@
+.Home {
+  padding-block: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.Home h1, .Home h2 {
+  text-align: center;
+  color: #24325FFF;
+}
+
+.Home h1 span, .Home h2 span {
+  color: #01B4C6;
+  background-color: #d2fbff;
+  border: 2px solid #01B4C6;
+}
+
+.Home .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 30px;
+  margin-block: 30px;
+}
+
+.Home .container button {
+  color: #01B4C6;
+  background-color: #d2fbff;
+  border-radius: 0px;
+  border: 2px solid #01B4C6;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.Home .container button:hover {
+  -webkit-transform: scale(105%);
+          transform: scale(105%);
+  background-color: #01B4C6;
+  color: #d2fbff;
+}
+/*# sourceMappingURL=Home.module.css.map */

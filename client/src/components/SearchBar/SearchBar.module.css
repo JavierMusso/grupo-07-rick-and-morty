@@ -1,0 +1,63 @@
+.SearchBar form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #B7E4F9FF;
+  border-radius: 50px;
+}
+
+.SearchBar form .input {
+  background-color: transparent;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+}
+
+.SearchBar form .input:focus {
+  outline: none;
+}
+
+.SearchBar form .input:focus::-webkit-input-placeholder {
+  opacity: 0;
+}
+
+.SearchBar form .input:focus:-ms-input-placeholder {
+  opacity: 0;
+}
+
+.SearchBar form .input:focus::-ms-input-placeholder {
+  opacity: 0;
+}
+
+.SearchBar form .input:focus::placeholder {
+  opacity: 0;
+}
+
+.SearchBar form .submit {
+  height: 45px;
+  width: 45px;
+  border-radius: 50px;
+  border: none;
+  background-color: #86c7d8;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.SearchBar form .submit img {
+  width: 25px;
+}
+
+.SearchBar form .submit:hover {
+  background-color: #2993ad;
+}
+/*# sourceMappingURL=SearchBar.module.css.map */

@@ -1,0 +1,129 @@
+.CharacterDetail {
+  padding-block: 100px;
+  max-width: 700px;
+  margin: auto;
+  background-color: #d2fbffbb;
+  padding: 40px;
+  padding-top: 100px;
+  border-radius: 30px;
+  border: 4px solid #01B4C6;
+  color: #24325FFF;
+}
+
+.CharacterDetail a {
+  text-decoration: none;
+}
+
+.CharacterDetail button {
+  color: #ff39398f;
+  border-radius: 50px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  font-weight: bold;
+  background-color: #a1e7dba6;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transform: scale(130%);
+          transform: scale(130%);
+}
+
+.CharacterDetail button img {
+  width: 25px;
+}
+
+.CharacterDetail button:hover {
+  background-color: #ff39398f;
+  color: #464646;
+}
+
+.CharacterDetail .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.CharacterDetail .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 30px;
+}
+
+.CharacterDetail .buttons .btnBack:hover {
+  background-color: #01b5c6d5;
+}
+
+.CharacterDetail .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-block: 20px;
+}
+
+.CharacterDetail .container img {
+  border-radius: 30px;
+  border: 2px solid #01B4C6;
+}
+
+.CharacterDetail .container div {
+  margin-right: 40px;
+  font-size: 18px;
+}
+
+.CharacterDetail .episodes ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style-type: none;
+  gap: 15px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.CharacterDetail .episodes ul li {
+  color: #ebfdff;
+  background-color: #01B4C6;
+  width: 25px;
+  height: 25px;
+  border-radius: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.CharacterDetail .episodes ul li:hover {
+  -webkit-transform: scale(130%);
+          transform: scale(130%);
+}
+/*# sourceMappingURL=CharacterDetail.module.css.map */

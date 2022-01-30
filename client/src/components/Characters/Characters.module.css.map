@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,WAAW,CAAC;EACR,SAAS,EAAE,MAAM;EACjB,MAAM,EAAE,IAAI;CAKM;;AAPtB,AAGI,WAHO,CAGP,UAAU,CAAC;EACP,OAAO,EAAE,IAAI;EACb,SAAS,EAAE,IAAI;EACf,eAAe,EAAE,YAAY;EAC7B,GAAG,EAAE,IAAI;CAAG",
+    "sources": [
+        "Characters.module.sass"
+    ],
+    "names": [],
+    "file": "Characters.module.css"
+}
