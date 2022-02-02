@@ -7,7 +7,7 @@ import { removeCharacter } from "../../redux/actions";
 
 function CharacterDetail() {
   let { characterID } = useParams();
-  const characters = useSelector((state) => state);
+  const characters = useSelector((state) => state.characters);
   const dispatch = useDispatch();
 
   let char = characters.find((char) => char.id === +characterID);

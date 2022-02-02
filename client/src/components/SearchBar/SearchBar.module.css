@@ -4,6 +4,7 @@
   display: flex;
   background-color: #B7E4F9FF;
   border-radius: 50px;
+  position: relative;
 }
 
 .SearchBar form .input {
@@ -31,6 +32,28 @@
 
 .SearchBar form .input:focus::placeholder {
   opacity: 0;
+}
+
+.SearchBar form .filteredResults {
+  background-color: peru;
+  position: absolute;
+  top: 50px;
+}
+
+.SearchBar form .filteredResults div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0;
+}
+
+.SearchBar form .filteredResults div button {
+  background-color: transparent;
+  border: none;
 }
 
 .SearchBar form .submit {

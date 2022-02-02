@@ -1,6 +1,15 @@
-import { GET_CHARACTERS, REMOVE_ALL, REMOVE_CHARACTER } from "./actions";
+import {
+  ADD_CHAR_SEARCH,
+  GET_CHARACTERS,
+  GET_CHARACTERS_FILTERED,
+  REMOVE_ALL,
+  REMOVE_CHARACTER,
+} from "./actions";
 
-const initialState = [];
+const initialState = {
+  characters: [],
+  filteredResults: [],
+};
 
 const rootReducer = (state = initialState, { type, payload }) => {
   switch (type) {
@@ -10,10 +19,10 @@ const rootReducer = (state = initialState, { type, payload }) => {
 
         // obtengo los IDs de ambos lados
         let IDsPayload = payload.map((char) => char.id);
-        let IDsState = state.map((char) => char.id);
+        let IDsState = state.characters.map((char) => char.id);
 
         // mergeo los Characters de ambos arreglos, para luego obtener los que no se repitan
-        let mergeChars = state.concat(payload);
+        let mergeChars = state.characters.concat(payload);
 
         // mergeo sin repetir los arreglos de IDs
         var mergeIDs = IDsState.concat(
@@ -25,26 +34,36 @@ const rootReducer = (state = initialState, { type, payload }) => {
           mergeChars.find((char) => char.id === id)
         );
 
-        return newState;
+        return { ...state, characters: newState };
       }
       // filtro para saber si se repiten
-      let noRepetidos = state.filter((char) => char.id !== payload.id);
+      let noRepetidos = state.characters.filter(
+        (char) => char.id !== payload.id
+      );
 
       // si la lista de noRepetidos es mas corta que la lista de state, es porque payload se repetia, entonces devuelve el estado sin cambios
-      if (noRepetidos.length === state.length) {
-        //console.log("char no se repite");
-        return [...state, payload];
+      if (noRepetidos.length === state.characters.length) {
+        return { ...state, characters: payload };
       } else {
-        //console.log("char repetido");
         return state;
       }
-    //return [...state, payload];
+
+    case GET_CHARACTERS_FILTERED:
+      return { ...state, filteredResults: payload.results };
+
+    case ADD_CHAR_SEARCH:
+      console.log(payload);
+      //return { ...state, characters: state.characters.push(payload) };
+      return { ...state, characters: [...state.characters, payload] };
 
     case REMOVE_CHARACTER:
-      return state.filter((char) => char.id !== payload);
+      return {
+        ...state,
+        characters: state.characters.filter((char) => char.id !== payload),
+      };
 
     case REMOVE_ALL:
-      return [];
+      return { ...state, characters: [] };
     default:
       return state;
   }

@@ -1,6 +1,10 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { removeAll, getCharacters } from "../../redux/actions";
+import {
+  removeAll,
+  getCharacters,
+  getCharactersFiltered,
+} from "../../redux/actions";
 import Characters from "../Characters/Characters";
 import styles from "./Home.module.css";
 

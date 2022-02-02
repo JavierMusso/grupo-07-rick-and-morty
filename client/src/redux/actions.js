@@ -1,7 +1,8 @@
 import axios from "axios";
 
 export const GET_CHARACTERS = "GET_CHARACTERS";
-export const GET_RANDOM = "GET_RANDOM";
+export const GET_CHARACTERS_FILTERED = "GET_CHARACTERS_FILTERED";
+export const ADD_CHAR_SEARCH = "ADD_CHAR_SEARCH";
 export const REMOVE_CHARACTER = "REMOVE_CHARACTER";
 export const REMOVE_ALL = "REMOVE_ALL";
 
@@ -19,6 +20,8 @@ export const getCharacters = (payload) => async (dispatch) => {
       console.log(err);
     }
   }
+
+  // if no payload, get random characters
 
   var AmountOfCharsToShow = 6;
   var TotalChars = 826;
@@ -51,6 +54,23 @@ export const getCharacters = (payload) => async (dispatch) => {
   } catch (err) {
     console.log(err);
   }
+};
+
+// getCharactersFiltered va a devolver una lista de chars filtrados por la searchbar
+export const getCharactersFiltered = (input, filters) => async (dispatch) => {
+  try {
+    let { data } = await axios.get(
+      `https://rickandmortyapi.com/api/character/`,
+      { params: { [filters[0]]: input } }
+    );
+    return dispatch({ type: GET_CHARACTERS_FILTERED, payload: data });
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+export const addCharacterFromSearch = (char) => {
+  return { type: ADD_CHAR_SEARCH, payload: char };
 };
 
 // removeCharacter recibeun ID y lo remueve de la lista renderizada

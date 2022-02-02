@@ -4,13 +4,13 @@ import { useSelector } from "react-redux";
 import styles from "./Characters.module.css";
 
 function Characters() {
-  const state = useSelector((state) => state);
+  const characters = useSelector((state) => state.characters);
 
   return (
     <div className={styles.Characters}>
       <div className={styles.container}>
-        {!state.length && "No characters to show"}
-        {state.map((char) => (
+        {!characters.length && "No characters to show"}
+        {characters.map((char) => (
           <Character key={char.id} char={char} />
         ))}
       </div>
