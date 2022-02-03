@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   addCharacterFromSearch,
-  getCharacters,
+  buildPages,
   getCharactersFiltered,
 } from "../../redux/actions";
 import styles from "./SearchBar.module.css";
@@ -31,11 +31,18 @@ function SearchBar() {
     }
   }
 
-  const resultClick = (char) => {
+  /*  const resultClick = (char) => {
     setInput("");
     setShowResult(false);
     dispatch(addCharacterFromSearch(char));
-  };
+  }; */
+
+  async function resultClick(char) {
+    setInput("");
+    setShowResult(false);
+    await dispatch(addCharacterFromSearch(char));
+    dispatch(buildPages());
+  }
 
   return (
     <div className={styles.SearchBar}>

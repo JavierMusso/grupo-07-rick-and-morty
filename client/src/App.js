@@ -5,7 +5,7 @@ import CharacterDetail from "./components/CharacterDetail/CharacterDetail.js";
 import Edit from "./components/Edit/Edit.js";
 import About from "./components/About/About.js";
 import { useDispatch } from "react-redux";
-import { getCharacters } from "./redux/actions";
+import { getCharacters, buildPages } from "./redux/actions";
 import { useEffect } from "react";
 
 function App() {
@@ -13,8 +13,13 @@ function App() {
 
   // hago el dispatch que trae los 6 personajes random cuando se monta el componente App
   useEffect(() => {
-    dispatch(getCharacters());
+    test();
   });
+
+  async function test() {
+    await dispatch(getCharacters());
+    dispatch(buildPages());
+  }
 
   return (
     <div className="App">

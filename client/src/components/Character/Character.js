@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { removeCharacter } from "../../redux/actions";
+import { buildPages, removeCharacter } from "../../redux/actions";
 import styles from "./Character.module.css";
 
 function Character({ char }) {
@@ -9,6 +9,7 @@ function Character({ char }) {
 
   const onClick = () => {
     dispatch(removeCharacter(char.id));
+    dispatch(buildPages());
   };
 
   return (

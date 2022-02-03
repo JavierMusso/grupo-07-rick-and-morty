@@ -1,5 +1,6 @@
 import axios from "axios";
 
+export const BUILD_PAGES = "BUILD_PAGES";
 export const GET_CHARACTERS = "GET_CHARACTERS";
 export const GET_CHARACTERS_FILTERED = "GET_CHARACTERS_FILTERED";
 export const ADD_CHAR_SEARCH = "ADD_CHAR_SEARCH";
@@ -81,4 +82,8 @@ export const removeCharacter = (payload) => {
 // removeAll saca todos los characters de la lista renderizada
 export const removeAll = () => {
   return { type: REMOVE_ALL };
+};
+
+export const buildPages = () => {
+  return { type: BUILD_PAGES };
 };

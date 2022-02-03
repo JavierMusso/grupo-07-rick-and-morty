@@ -1,5 +1,6 @@
 import {
   ADD_CHAR_SEARCH,
+  BUILD_PAGES,
   GET_CHARACTERS,
   GET_CHARACTERS_FILTERED,
   REMOVE_ALL,
@@ -9,10 +10,21 @@ import {
 const initialState = {
   characters: [],
   filteredResults: [],
+  current: 0,
+  pages: [],
 };
 
 const rootReducer = (state = initialState, { type, payload }) => {
   switch (type) {
+    case BUILD_PAGES:
+      console.log("reducer", state.characters.length);
+      let n = Math.ceil(state.characters.length / 6);
+      let newPages = [];
+      for (let i = 0; i < n; i++) {
+        newPages.push([...state.characters.slice(i * 6, (i + 1) * 6)]);
+      }
+      return { ...state, pages: newPages };
+
     case GET_CHARACTERS:
       if (payload.length > 1) {
         // tengo que comparar los id de payload con los id renderizados, para evitar repetidos

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import styles from "./CharacterDetail.module.css";
 import backIcon from "../../img/arrow-left-solid.svg";
-import { removeCharacter } from "../../redux/actions";
+import { buildPages, removeCharacter } from "../../redux/actions";
 
 function CharacterDetail() {
   let { characterID } = useParams();
@@ -25,7 +25,12 @@ function CharacterDetail() {
             </button>
           </Link>
           <Link to="/">
-            <button onClick={() => dispatch(removeCharacter(char.id))}>
+            <button
+              onClick={() => {
+                dispatch(removeCharacter(char.id));
+                dispatch(buildPages());
+              }}
+            >
               X
             </button>
           </Link>
