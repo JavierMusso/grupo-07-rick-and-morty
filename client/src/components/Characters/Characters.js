@@ -1,37 +1,21 @@
-import React, { useState } from "react";
 import Character from "../Character/Character";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import styles from "./Characters.module.css";
 import leftIcon from "../../img/chevron-left-solid.svg";
 import rightIcon from "../../img/chevron-right-solid.svg";
+import { setCurrent } from "../../redux/actions";
 
 function Characters() {
-  const characters = useSelector((state) => state.characters);
-  const pages = useSelector((state) => state.pages);
-  const [current, setCurrent] = useState(0);
-  console.log(pages, "current", current);
-
-  /* const [currentPage, setCurrentPage] = useState(0);
-
-  let nPages = Math.ceil(characters.length / 6);
-  let Pages = [];
-
-  for (let i = 0; i < nPages; i++) {
-    Pages.push([...characters.slice(i * 6, (i + 1) * 6)]);
-  }
-
-  const [pageContent, setPageContent] = useState(Pages[0]);
-
-  console.log(currentPage);
-  console.log(pageContent); */
+  const dispatch = useDispatch();
+  const { characters, pages, current } = useSelector((state) => state);
 
   const changeCurrent = (str) => {
     switch (str) {
       case "right":
-        current < pages.length - 1 && setCurrent(current + 1);
+        current < pages.length - 1 && dispatch(setCurrent(current + 1));
         break;
       case "left":
-        current > 0 && setCurrent(current - 1);
+        current > 0 && dispatch(setCurrent(current - 1));
         break;
       default:
         break;
@@ -54,7 +38,7 @@ function Characters() {
           pages.map((page, i) => (
             <button
               className={i === current && styles.current}
-              onClick={() => setCurrent(i)}
+              onClick={() => dispatch(setCurrent(i))}
               key={i + 1}
             >
               {i + 1}

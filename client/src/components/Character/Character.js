@@ -1,15 +1,19 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { buildPages, removeCharacter } from "../../redux/actions";
+import { buildPages, removeCharacter, setCurrent } from "../../redux/actions";
 import styles from "./Character.module.css";
 
 function Character({ char }) {
   const dispatch = useDispatch();
+  const { pages, current } = useSelector((state) => state);
 
   const onClick = () => {
     dispatch(removeCharacter(char.id));
     dispatch(buildPages());
+    if (pages[current].length === 1) {
+      dispatch(setCurrent(current - 1));
+    }
   };
 
   return (

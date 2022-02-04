@@ -6,6 +6,7 @@ export const GET_CHARACTERS_FILTERED = "GET_CHARACTERS_FILTERED";
 export const ADD_CHAR_SEARCH = "ADD_CHAR_SEARCH";
 export const REMOVE_CHARACTER = "REMOVE_CHARACTER";
 export const REMOVE_ALL = "REMOVE_ALL";
+export const SET_CURRENT = "SET_CURRENT";
 
 // getRandomCharacters devuelve una lista de characters random.
 export const getCharacters = (payload) => async (dispatch) => {
@@ -86,4 +87,8 @@ export const removeAll = () => {
 
 export const buildPages = () => {
   return { type: BUILD_PAGES };
+};
+
+export const setCurrent = (payload) => {
+  return { type: SET_CURRENT, payload: payload };
 };

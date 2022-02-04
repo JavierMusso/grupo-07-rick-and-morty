@@ -5,6 +5,7 @@ import {
   GET_CHARACTERS_FILTERED,
   REMOVE_ALL,
   REMOVE_CHARACTER,
+  SET_CURRENT,
 } from "./actions";
 
 const initialState = {
@@ -24,6 +25,9 @@ const rootReducer = (state = initialState, { type, payload }) => {
         newPages.push([...state.characters.slice(i * 6, (i + 1) * 6)]);
       }
       return { ...state, pages: newPages };
+
+    case SET_CURRENT:
+      return { ...state, current: payload };
 
     case GET_CHARACTERS:
       if (payload.length > 1) {
