@@ -18,7 +18,6 @@ const initialState = {
 const rootReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case BUILD_PAGES:
-      console.log("reducer", state.characters.length);
       let n = Math.ceil(state.characters.length / 6);
       let newPages = [];
       for (let i = 0; i < n; i++) {

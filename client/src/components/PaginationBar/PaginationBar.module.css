@@ -1,0 +1,55 @@
+.PaginationBar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  max-width: 350px;
+  margin: auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 30px;
+}
+
+.PaginationBar .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+}
+
+.PaginationBar button {
+  color: #ff39398f;
+  border-radius: 50px;
+  width: 30px;
+  height: 30px;
+  border: none;
+  font-weight: bold;
+  background-color: #4bcfb9a6;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.PaginationBar button img {
+  width: 10px;
+}
+
+.PaginationBar button:hover {
+  background-color: #01b5c6d5;
+  color: #464646;
+}
+
+.PaginationBar .current {
+  background-color: peru;
+  color: white;
+}
+/*# sourceMappingURL=PaginationBar.module.css.map */
